@@ -2,7 +2,7 @@
 
 **What it does.** Guests order food and drinks from an AI agent on WhatsApp. It checks their room number against the guests staying, prices the order and sends a docket to the kitchen and a ticket to the bar. Paid by Paystack link, the order goes out once the payment is confirmed. Charged to the room, it goes out at once and the front desk accepts or declines the charge on the staff order board.
 
-**What it does not do.** It never messages a guest first, so it cannot say the food is ready or that a room charge was declined. It does not count stock, take walk-in orders or confirm allergies. Guests dial 0 for changes, cancellations, complaints, refunds and allergy checks.
+**What it does not do.** It never messages a guest first, so it cannot say a payment landed, the food is ready or a room charge was declined; the guest asks and it answers. It does not count stock, take walk-in orders or confirm allergies. Guests dial 0 for changes, cancellations, complaints, refunds and allergy checks.
 
 **Before real guests use it**
 

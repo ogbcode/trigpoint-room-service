@@ -3,7 +3,7 @@
 ## Room service
 
 - Room service runs 24 hours, every day.
-- Food comes from the kitchen and reaches the room in about 30 to 40 minutes. Drinks come from the bar in about 10 minutes.
+- Guests receive food within 30 to 40 minutes and drinks within 10 minutes.
 - Every order gets one reference, like TPH-1004. The kitchen gets a docket for the food and the bar gets a ticket for the drinks, each with its own amount, so both keep their own record of the order.
 - Notes such as "no ice" or "less pepper" go with the item they belong to.
 
