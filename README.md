@@ -9,7 +9,7 @@ Trigpoint Hotel is my father's hotel in Nigeria. Each guest order needs a kitche
 - A Chord teammate runs the skill in `skill/room-service` and talks to guests on WhatsApp.
 - This service is its tool: an MCP server that Chord calls over HTTPS, with five tools: `get_menu`, `quote_order`, `place_order`, `get_order` and `new_payment_link`.
 - Orders, tickets and room charges are kept in Postgres.
-- Paystack test mode takes payments. The webhook, the page Paystack sends the guest back to, and `get_order` all confirm a payment the same way: ask Paystack, check the amount, then send the tickets once.
+- Paystack test mode takes payments. The webhook, the page Paystack sends the guest back to, and `get_order` all confirm a payment the same way: ask Paystack, check the amount, then send the tickets once. Webhook calls are rejected unless Paystack's signature matches.
 - `/board` is the staff page: kitchen and bar tickets, room charges waiting for the front desk, and the latest orders.
 
 ## Run it locally

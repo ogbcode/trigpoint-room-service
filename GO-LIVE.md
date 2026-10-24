@@ -1,6 +1,6 @@
 # Going live: room service on WhatsApp
 
-**What it does.** Guests order food and drinks from an AI agent on WhatsApp. It checks the room number against the guests staying, prices the order and sends a docket to the kitchen and a ticket to the bar. Paid by Paystack link, the tickets go out once the payment is confirmed. Charged to the room, they go out at once and the front desk accepts or declines the charge on the staff board.
+**What it does.** Guests order food and drinks from an AI agent on WhatsApp. It checks the room number against the guests staying, prices the order and sends a docket to the kitchen and a ticket to the bar. Paid by Paystack link, the tickets go out once the payment is confirmed. Charged to the room, they go out at once, as the hotel does today, and the front desk accepts or declines the charge on the staff board.
 
 **What it does not do.** It cannot send updates on its own, so guests must ask whether a payment landed or a room charge was declined. It does not count stock, take walk-in orders or confirm allergies. Guests dial 0 for changes, cancellations, complaints, refunds and allergy checks.
 
