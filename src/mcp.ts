@@ -3,7 +3,6 @@ import { z } from 'zod';
 import {
   MAX_ITEM_ID_LENGTH,
   MAX_ITEM_QUANTITY,
-  MAX_NAME_LENGTH,
   MAX_NOTE_LENGTH,
   MAX_ORDER_LINES,
   MAX_ORDER_REF_LENGTH,
@@ -25,7 +24,6 @@ const guest = {
     .min(1)
     .max(MAX_ROOM_NUMBER_LENGTH)
     .describe('Room number the guest gave, e.g. "204"'),
-  surname: z.string().trim().min(1).max(MAX_NAME_LENGTH).describe('Surname on the booking'),
 };
 
 const items = z
@@ -52,10 +50,7 @@ const orderRef = z
   .nullish()
   .describe(`Order reference such as "${ORDER_PREFIX}-1004". Leave it out to use the guest's latest order.`);
 
-const toGuest = (args: { room_number: string; surname: string }) => ({
-  roomNumber: args.room_number,
-  surname: args.surname,
-});
+const toGuest = (args: { room_number: string }) => ({ roomNumber: args.room_number });
 
 const toItems = (list: z.infer<typeof items>) =>
   list.map((item) => ({ itemId: item.item_id, quantity: item.quantity, note: item.note ?? null }));
@@ -87,7 +82,7 @@ export function createMcpServer() {
     Tool.QUOTE_ORDER,
     {
       description:
-        'Prices an order without placing it. Checks the room and surname against guests staying in the hotel and that every item is available, then returns each line and the total to read back to the guest. Call it before asking the guest to confirm.',
+        "Prices an order without placing it. Checks that a guest is staying in the room and that every item is available, then returns the guest's first name, each line and the total to read back to the guest. Call it before asking the guest to confirm.",
       inputSchema: { ...guest, items },
       annotations: { readOnlyHint: true },
     },

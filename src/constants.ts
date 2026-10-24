@@ -229,7 +229,7 @@ export const BOARD_PAYMENT_LABEL: Record<PaymentStatus, string> = {
 export const BOARD_REFUND_NEEDED = 'paid twice, refund needed';
 
 export const GUEST_NOT_FOUND =
-  'No guest staying in that room matches that surname. Ask the guest to check their room number and the surname on the booking. If they give the same details again, ask them to dial 0 for the front desk.';
+  'No guest is staying in that room. Ask the guest to check their room number. If they give the same room again, ask them to dial 0 for the front desk.';
 export const ORDER_NOT_FOUND = `This guest has no order with that reference. Call ${Tool.GET_ORDER} without order_ref to see their latest order.`;
 export const NO_ORDERS = 'This guest has no room service orders yet.';
 export const ORDER_SETTLED = `This order is already settled. Call ${Tool.GET_ORDER} to tell the guest where it is.`;

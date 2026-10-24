@@ -10,7 +10,7 @@
 ## Paying
 
 - Pay now: the guest gets a Paystack link and can pay by card, bank transfer or USSD. The order goes to the kitchen and bar only after the payment is confirmed.
-- Charge to room: only for guests staying in the hotel, and the room number and surname must match the booking. The kitchen and bar start straight away. The front desk confirms the charge and it is settled at checkout. If the front desk declines it, the guest pays by link instead.
+- Charge to room: only for guests staying in the hotel. The kitchen and bar start straight away. The front desk confirms the charge and it is settled at checkout. If the front desk declines it, the guest pays by link instead.
 - The hotel takes payments in naira only.
 
 ## Front desk

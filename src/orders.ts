@@ -61,7 +61,6 @@ type Payment = typeof payments.$inferSelect;
 
 interface GuestInput {
   roomNumber: string;
-  surname: string;
 }
 
 interface ItemInput {
@@ -174,8 +173,7 @@ async function findInHouseStay(executor: Executor, guest: GuestInput, lock = fal
     .select()
     .from(stays)
     .where(and(eq(stays.roomNumber, guest.roomNumber), eq(stays.status, StayStatus.IN_HOUSE)));
-  const guests = lock ? await query.for('update') : await query;
-  const stay = guests.find((candidate) => candidate.surname.toLowerCase() === guest.surname.toLowerCase());
+  const [stay] = lock ? await query.for('update') : await query;
   if (!stay) throw new OrderError(GUEST_NOT_FOUND);
   return stay;
 }

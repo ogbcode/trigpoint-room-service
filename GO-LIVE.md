@@ -1,6 +1,6 @@
 # Going live: room service on WhatsApp
 
-**What it does.** Guests order food and drinks from an AI agent on WhatsApp. It checks their room and surname against the guests staying, prices the order and sends a docket to the kitchen and a ticket to the bar. Paid by Paystack link, the order goes out once the payment is confirmed. Charged to the room, it goes out at once and the front desk accepts or declines the charge on the staff order board.
+**What it does.** Guests order food and drinks from an AI agent on WhatsApp. It checks their room number against the guests staying, prices the order and sends a docket to the kitchen and a ticket to the bar. Paid by Paystack link, the order goes out once the payment is confirmed. Charged to the room, it goes out at once and the front desk accepts or declines the charge on the staff order board.
 
 **What it does not do.** It never messages a guest first, so it cannot say the food is ready or that a room charge was declined. It does not count stock, take walk-in orders or confirm allergies. Guests dial 0 for changes, cancellations, complaints, refunds and allergy checks.
 
@@ -10,7 +10,7 @@
 - Switch Paystack to live payments once it has verified the business. Every booking needs an email for the payment link.
 - Connect the hotel's WhatsApp number to Chord, the service the agent runs on.
 - Name who gets alerted when it breaks. Today nobody is: errors only reach the developer's logs.
-- Anyone with a guest's room and surname can charge to that room. Decide whether room charges need a code sent to the guest's phone.
+- Recognise guests by the WhatsApp number the front desk records at check-in. Today the agent asks only for the room number, so anyone who names a room can charge food to it.
 
 **When things go wrong**
 

@@ -11,7 +11,7 @@
 
 - **What happened:** Before placing an order, a tool needs to know which guest is writing, and nothing tells it. I logged every request Chord sent the tool server during a live chat turn: ordinary HTTP and Cloudflare headers (user-agent `Java-http-client/23.0.2`) and a `tools/call` body of only `name` and `arguments`. No sender, thread or chat id, and no `_meta`.
 - **How I found the cause:** The model does know the sender. Asked in a test chat, it read back the exact sender id and display name I had sent. The MCP server docs list only fixed headers, set once per server.
-- **Workaround:** The tools ask for the room number and the surname on the booking and check both against the guests staying. Having the model pass the sender id would let a guest try to make it pass someone else's.
+- **Workaround:** For the demo, the tools take the room number the guest gives and check that a guest is staying in that room. Matching the guest's WhatsApp number would mean trusting the model to pass the sender id, and a guest could try to make it pass someone else's.
 - **What I'd change in Chord:** Send the verified sender, such as the WhatsApp number, and the thread id with every tool call, as headers or in `_meta`, so a tool can identify the guest without trusting the model.
 
 ## 3. The teammate apologised for its own correct answers

@@ -32,11 +32,11 @@ The Dockerfile builds the service and carries the migrations. On Railway, add a 
 
 ## Try it
 
-Guests staying: room 101 Okafor, 204 Bakare, 305 Bello and 410 Eze. Room 512 Adeyemi has checked out, and goat meat pepper soup is sold out.
+Guests are staying in rooms 101, 204, 305 and 410. Room 512 has checked out, and goat meat pepper soup is sold out.
 
-> Hi, room 101, Okafor here. Can I get jollof rice with chicken and two bottles of water?
+> Hi, I'm in room 101. Can I get jollof rice with chicken and two bottles of water?
 
-Pay with Paystack test card `4084 0840 8408 4081` (CVV 408, any future expiry), or `4084 0800 0000 5408` (CVV 001) to see a decline. Or charge it to the room, then accept or reject the charge under Front desk on `SERVER_URL/board`. The board asks for `BOARD_PASSWORD`; any username works.
+On the Paystack test checkout, choose success or decline. Or charge it to the room, then accept or reject the charge under Front desk on `SERVER_URL/board`. The board asks for `BOARD_PASSWORD`; any username works.
 
 ## How I used AI
 
