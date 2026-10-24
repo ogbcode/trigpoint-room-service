@@ -178,7 +178,7 @@ export const CHORD_TEAMMATE = {
 
 export const ORDER_STATUS_TEXT: Record<Exclude<OrderStatus, OrderStatus.CLOSED>, string> = {
   [OrderStatus.AWAITING_PAYMENT]: 'Waiting for payment by link.',
-  [OrderStatus.AWAITING_ROOM_CHARGE]: 'Charged to the room. Waiting for the front desk to confirm the charge.',
+  [OrderStatus.AWAITING_ROOM_CHARGE]: 'On the room bill. Waiting for the front desk to confirm it.',
   [OrderStatus.OPEN]: `The front desk declined the room charge. The kitchen and bar already have the order, so it needs paying by link. Call ${Tool.NEW_PAYMENT_LINK} and send the guest the link.`,
 };
 export const CLOSED_STATUS_TEXT: Record<PaymentMethod, string> = {
@@ -234,7 +234,7 @@ export const ORDER_NOT_FOUND = `This guest has no order with that reference. Cal
 export const NO_ORDERS = 'This guest has no room service orders yet.';
 export const ORDER_SETTLED = `This order is already settled. Call ${Tool.GET_ORDER} to tell the guest where it is.`;
 export const ROOM_CHARGE_IN_REVIEW =
-  'This order is charged to the room and waiting for the front desk, so no payment link is needed.';
+  'This order is on the room bill and waiting for the front desk, so no payment link is needed.';
 export const PAYMENT_CHECK_FAILED =
   'Could not reach Paystack to check the payment. Ask the guest to try again in a minute.';
 export const NOT_AWAITING_ROOM_CHARGE = 'This order is not waiting for a room charge decision.';
