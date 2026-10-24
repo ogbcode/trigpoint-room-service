@@ -2,7 +2,7 @@
 
 ## 1. Creating the teammate failed with an error that names no field
 
-- **What happened:** `POST /v1/teammates` returned `400 {"error":{"code":"BAD_REQUEST","message":"Malformed or unrecognized request body"}}` (request `93f26bbd-102f-41bb-81ad-4dd24f9bb29e`). The MCP server had registered with the same key a second earlier, so auth and scopes were fine.
+- **What happened:** `POST /v1/teammates` returned `400 {"error":{"code":"BAD_REQUEST","message":"Malformed or unrecognized request body"}}` (request `93f26bbd-102f-41bb-81ad-4dd24f9bb29e`). The MCP server had registered with the same key a second earlier, so I looked at the request body first.
 - **How I found the cause:** Every field I sent is in the OpenAPI schema for this call. Autonomy and escalation can only be set at creation, so I tested with an existing teammate's email instead of creating one: a body Chord accepts returned `409 ALREADY_EXISTS` and created nothing; a body it rejected returned `400`. Removing one field at a time pointed to `capabilities`, then to `surface_evidence` alone. The Teammates guide says that field is set on update, not create. For this field the guide matches the server and the OpenAPI does not.
 - **Fix:** Dropped `surface_evidence` from the create body. It was `false`, the default, anyway.
 - **What I'd change in Chord:** Name the rejected field in validation errors, and generate the OpenAPI create schema from the type the server accepts.
@@ -18,5 +18,5 @@
 
 - **What happened:** In later turns the teammate wrote "I need to retract part of my last message" and "To fix my earlier mistake, I should have checked the system before listing items and prices". The earlier messages were correct and had come from tool calls.
 - **How I found the cause:** The turn history (`GET /v1/threads/{id}/turns`) keeps the text of each message and the names of the tools used, not their results, and every turn called `get_menu` and `quote_order` again. My reading is that tool results are not replayed into later turns, so the model cannot see where its earlier prices and names came from. The cause is unconfirmed.
-- **Fix:** A paragraph at the top of the skill says its earlier messages came from tool results it can no longer see, not to retract or apologise for them because of that, and to call the tool again when it needs the details. Order lookups also return the guest's first name, so the name is always backed by a tool result. The apologies stopped on the next run.
+- **Workaround:** A paragraph at the top of the skill says its earlier messages came from tool results it can no longer see, not to retract or apologise for them because of that, and to call the tool again when it needs the details. Order lookups also return the guest's first name, so the name is always backed by a tool result. The apologies stopped on the next run.
 - **What I'd change in Chord:** Replay a short summary of each turn's tool results, or document what is replayed between turns, so builders design skills for it from the start.

@@ -14,7 +14,7 @@
 
 **When things go wrong**
 
-- A payment fails: nothing goes out, and the guest can retry or ask for a new link.
+- A payment fails: no tickets go to the kitchen or bar, and the guest can retry or ask for a new link.
 - A guest pays twice: the board shows "paid twice, refund needed", and the front desk refunds it in Paystack.
 - The front desk declines a room charge: staff tell the guest, who can ask the agent for a payment link.
 - The order system is down: the agent asks guests to dial 0. If Chord or WhatsApp is down, guests get no reply.
