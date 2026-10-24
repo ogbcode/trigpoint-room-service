@@ -36,7 +36,7 @@ Guests are staying in rooms 101, 204, 305 and 410. Room 512 has checked out, and
 
 > Hi, I'm in room 101. Can I get jollof rice with chicken and two bottles of water?
 
-On the Paystack test checkout, choose success or decline. Or charge it to the room, then accept or reject the charge under Front desk on `SERVER_URL/board`. The board asks for `BOARD_PASSWORD`; any username works.
+On the Paystack test checkout, choose success or decline. Or charge it to the room, then accept or reject the charge under Front desk on `SERVER_URL/board`. Log in to the board with the username `trigpoint` and `BOARD_PASSWORD`.
 
 ## How I used AI
 
