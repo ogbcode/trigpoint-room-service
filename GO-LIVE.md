@@ -1,16 +1,16 @@
 # Going live: room service on WhatsApp
 
-**What it does.** Guests order food and drinks from an AI agent on WhatsApp. It checks their room number against the guests staying, prices the order and sends a docket to the kitchen and a ticket to the bar. Paid by Paystack link, the kitchen and bar get their tickets once the payment is confirmed. Charged to the room, they get them at once and the front desk accepts or declines the charge on the staff order board.
+**What it does.** Guests order food and drinks from an AI agent on WhatsApp. It checks the room number against the guests staying, prices the order and sends a docket to the kitchen and a ticket to the bar. Paid by Paystack link, the tickets go out once the payment is confirmed. Charged to the room, they go out at once and the front desk accepts or declines the charge on the staff board.
 
-**What it does not do.** It cannot send updates on its own, so guests must ask whether a payment landed or a room charge was declined. It does not say when food is ready, count stock, take walk-in orders or confirm allergies. Guests dial 0 for changes, cancellations, complaints, refunds and allergy checks.
+**What it does not do.** It cannot send updates on its own, so guests must ask whether a payment landed or a room charge was declined. It does not count stock, take walk-in orders or confirm allergies. Guests dial 0 for changes, cancellations, complaints, refunds and allergy checks.
 
 **Before real guests use it**
 
-- Connect it to the hotel system for real bookings and the real menu, so orders land where staff already work. Today both are made up.
+- Connect it to the hotel system for real bookings and the real menu. Today both are made up.
 - Switch Paystack to live payments once it has verified the business. Every booking needs an email for the payment link.
 - Connect the hotel's WhatsApp number to Chord, the service the agent runs on.
-- Set up failure alerts to the developer, and have the front desk look after the guest meanwhile. Today nobody is told when it breaks.
-- Recognise guests by the WhatsApp number the front desk records at check-in. Today the agent asks only for the room number, so anyone who names a room can charge food to it.
+- Set up failure alerts to the developer. Today nobody is told when it breaks.
+- Recognise guests by the WhatsApp number recorded at check-in. Today anyone who names a room can charge food to it.
 
 **When things go wrong**
 
