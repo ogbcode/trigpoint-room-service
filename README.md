@@ -2,7 +2,7 @@
 
 **Role:** Forward-deployed Engineering
 
-Trigpoint Hotel is my father's hotel in Nigeria. Each guest order needs a kitchen docket from the restaurant and a separate bill from the bar, which adds manual work to every order and makes the accounts harder to check. This agent takes the order from the guest on WhatsApp and records it once, split into a kitchen docket and a bar ticket with their own amounts, paid by Paystack link or charged to the room for the front desk to confirm. Left out on purpose: telling the guest when the food is ready, stock counts, walk-in diners, and the live connection to the hotel's own system, which the order service here is built to match.
+Trigpoint Hotel is my father's hotel in Nigeria. Each guest order needs a kitchen docket from the restaurant and a separate bill from the bar, which adds manual work to every order and makes the accounts harder to check. The agent takes the order on WhatsApp, records a kitchen docket and a bar ticket with their own amounts, and takes payment by Paystack link or a room charge the front desk confirms. I left out telling the guest when food is ready, stock counts, walk-in diners and a live connection to the hotel's own system.
 
 ## How it works
 
