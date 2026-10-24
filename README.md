@@ -2,7 +2,7 @@
 
 **Role:** Forward-deployed Engineering
 
-Trigpoint Hotel is my father's hotel in Nigeria. When a guest orders food and drinks, the kitchen won't cook without a docket from the restaurant, and the restaurant has to get a separate bill from the bar for the drinks, which adds manual work and auditing overhead to every order. This agent takes the order from the guest on WhatsApp and records it once, split into a kitchen docket and a bar ticket with their own amounts, paid by Paystack link or charged to the room for the front desk to confirm. Left out on purpose: telling the guest when the food is ready, stock counts, walk-in diners, and the live connection to the hotel's own system, which the order service here is built to match.
+Trigpoint Hotel is my father's hotel in Nigeria. Each guest order needs a kitchen docket from the restaurant and a separate bill from the bar, which adds manual work to every order and makes the accounts harder to check. This agent takes the order from the guest on WhatsApp and records it once, split into a kitchen docket and a bar ticket with their own amounts, paid by Paystack link or charged to the room for the front desk to confirm. Left out on purpose: telling the guest when the food is ready, stock counts, walk-in diners, and the live connection to the hotel's own system, which the order service here is built to match.
 
 ## How it works
 
@@ -40,4 +40,4 @@ On the Paystack test checkout, choose success or decline. Or charge it to the ro
 
 ## How I used AI
 
-I used Claude Code to read the Chord API docs, review the design, write the code and docs, and run test conversations through Chord's chat API. I chose the problem, made the product decisions (both payment paths, front desk approval, what to leave out), and paid the Paystack test links myself.
+I used Claude Code to read the Chord API docs, review the design, write the code and docs, and run test conversations through Chord's chat API. I chose the problem, made the product decisions, and completed the Paystack test checkouts myself.
