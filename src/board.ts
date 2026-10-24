@@ -159,6 +159,9 @@ export function renderBoard(data: BoardData) {
 ${frontDesk(data.roomCharges)}
 ${orderTable(data.orders)}`;
   const refresh = `<script>
+document.addEventListener('submit', (event) => {
+  for (const button of event.target.querySelectorAll('button')) button.disabled = true;
+});
 setInterval(async () => {
   const response = await fetch(location.href);
   if (!response.ok) return;

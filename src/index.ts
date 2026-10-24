@@ -3,7 +3,14 @@ import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/
 import { hasBasicPassword, hasBearerToken } from './auth.js';
 import { renderBoard, renderPaymentPage } from './board.js';
 import { config } from './config.js';
-import { BOARD_AUTH_REALM, HttpMethod, PAYSTACK_SIGNATURE_HEADER, RoomChargeDecision, Route } from './constants.js';
+import {
+  BOARD_AUTH_REALM,
+  HttpMethod,
+  NOT_AWAITING_ROOM_CHARGE,
+  PAYSTACK_SIGNATURE_HEADER,
+  RoomChargeDecision,
+  Route,
+} from './constants.js';
 import { migrateAndSeed } from './db.js';
 import { logger } from './logger.js';
 import { createMcpServer } from './mcp.js';
@@ -93,8 +100,8 @@ app.post(Route.BOARD_DECISION, { preHandler: requireBoardLogin }, async (request
   try {
     await decideRoomCharge(orderRef, decision as RoomChargeDecision);
   } catch (error) {
-    if (error instanceof OrderError) return reply.code(400).send(error.message);
-    throw error;
+    if (!(error instanceof OrderError)) throw error;
+    if (error.message !== NOT_AWAITING_ROOM_CHARGE) return reply.code(400).send(error.message);
   }
   return reply.redirect(Route.BOARD, 303);
 });
