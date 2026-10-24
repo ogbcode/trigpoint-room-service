@@ -12,7 +12,7 @@
 - **What happened:** Before placing an order, a tool needs to know which guest is writing, and nothing tells it. I logged every request Chord sent the tool server during a live chat turn. The headers carried no sender, thread or chat id, and the `tools/call` body held only `name` and `arguments`, with no `_meta`.
 - **How I found the cause:** The model does know the sender. Asked in a test chat, it read back the exact sender id and display name I had sent. The MCP server docs list only fixed headers, set once per server.
 - **Workaround:** For the demo, the tools take the room number the guest gives and check that a guest is staying in that room. Matching the guest's WhatsApp number would mean trusting the model to pass the sender id, and a guest could try to make it pass someone else's.
-- **What I'd change in Chord:** Send the verified sender, such as the WhatsApp number, and the thread id with every tool call, as headers or in `_meta`, so a tool can identify the guest without trusting the model. Then let a server post a message into that thread. Today the thread messages route only works after a human takes the chat over, so a guest only hears that their payment landed when they ask.
+- **What I'd change in Chord:** Send the verified sender, such as the WhatsApp number, and the thread id with every tool call, as headers or in `_meta`, so a tool can identify the guest without trusting the model. Then let a server post a message into that thread. Today the thread messages route only works after a human takes the chat over, so a guest only hears that their payment went through when they ask.
 
 ## 3. The teammate apologised for its own correct answers
 
